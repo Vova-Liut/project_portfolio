@@ -25,6 +25,27 @@
             }
         }
     }
+    .resume {
+        &__wrapper {
+            padding: 50px 50px 0 50px;
+            grid-template-columns: repeat(2,400px);
+            column-gap: 50px;
+        }
+    }
+    .skills {
+        padding-top: 60px;
+        &__wrapper-tech {
+            margin: 40px 10px 0 5px;
+            grid-template: repeat(2,minmax(270px,auto)) / repeat(2,minmax(270px,auto));
+            grid-gap: 10px;
+        }
+        &__ratings {
+            margin-top: 60px;
+            grid-template: repeat(3,minmax(60px,auto)) / repeat(2,350px);
+            column-gap: 45px;
+            row-gap: 30px;
+        }
+    }
 }
 
 @media (max-width: 992px) {
@@ -49,6 +70,21 @@
             }
         }
     }
+    .resume {
+        padding-top: 40px;
+        &__wrapper {
+            padding: 20px 50px 0 15px;
+            grid-template-columns: repeat(2,320px);
+            column-gap: 20px;
+        }
+    }
+    .skills {
+        &__ratings {
+            grid-template: repeat(3,minmax(60px,100%))/repeat(2,350px);
+            column-gap: 20px;
+        }
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -83,7 +119,40 @@
             }
         }
     }
+    .resume { 
+        padding-top: 40px;
+        &__subtitle {
+            font-size: 24px;
+        }
+        &__divider {
+            margin: 15px auto 0 auto;
+        }
+        &__wrapper {
+            padding: 40px 50px 0 15px;
+            grid-template-columns: repeat(1,450px);
+            column-gap: 20px;
+            justify-content: center;
+        }
+    }
+    .skills {
+        padding-top: 46px;
+        &__title-big {
+            font-size: 24px;
+            line-height: 36px;
+        }
+        &__divider {
+            margin-top: 15px;
+        }
+        &__wrapper-tech {
+            margin-top: 15px;
+        }
+        &__ratings {
+            grid-template: repeat(6,minmax(60px,100%))/repeat(1,350px);
+            column-gap: 20px;
+        }
+    }
 }
+
 
 @media (max-width: 576px) {
     .container {
@@ -120,5 +189,30 @@
             grid-template-columns: 1fr;
         }
     }
+    .resume {
+        &__wrapper {
+        grid-template-columns: repeat(1,255px);
+        column-gap: 12px;
+        }
+    }
+    .skills {
+        &__wrapper-tech {
+            justify-content: center;
+            grid-template: repeat(1,minmax(270px,270px)) / repeat(1,minmax(270px,270px));
+            grid-gap: 20px;
+        }
+        &__ratings {
+            grid-template: repeat(6,minmax(60px,100%))/repeat(1, 300px);
+            &-line {
+                width: 300px;
+            }
+            &-item {
+                display: grid;
+                grid-template: minmax(21px,auto) 14px/200px 90px;
+            }
+            &-counter {
+                justify-self: end;
+            }
+        }
+    }
 }
-

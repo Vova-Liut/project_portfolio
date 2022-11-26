@@ -6,8 +6,9 @@
         @include before_circle;
         &:before {
             content: '';
-            position: absolute;
-            left: 572px; 
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
         }
         &-big {
             text-align: center;
