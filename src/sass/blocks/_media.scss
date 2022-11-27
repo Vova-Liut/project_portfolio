@@ -36,14 +36,36 @@
         padding-top: 60px;
         &__wrapper-tech {
             margin: 40px 10px 0 5px;
-            grid-template: repeat(2,minmax(270px,auto)) / repeat(2,minmax(270px,auto));
-            grid-gap: 10px;
+            grid-template-columns: repeat(auto-fit, 270px);
+            justify-content: space-between;
         }
         &__ratings {
             margin-top: 60px;
-            grid-template: repeat(3,minmax(60px,auto)) / repeat(2,350px);
-            column-gap: 45px;
-            row-gap: 30px;
+            grid-template-columns: repeat(auto-fit, 300px);
+            grid-auto-rows: minmax(70px, auto);
+            justify-content:space-around;
+
+        }
+    }
+    .portfolio {
+        &__wrapper {
+            grid-template-columns: repeat(auto-fit, 280px);
+            grid-auto-rows: 280px;
+            justify-content: space-around;
+            row-gap: 35px;
+            .horizontal, .vertical {
+                grid-row: unset;
+                grid-column: unset;
+            }
+        }
+    }
+    .contacts {
+        &__wrapper {
+            padding: 0;
+            grid-template-columns: 400px 520px;
+        }
+        &__form {
+            grid-template: 45px 190px 45px / repeat(2, 250px);
         }
     }
 }
@@ -55,7 +77,13 @@
     .title {
         &_fz36 {
             font-size: 30px;
+            line-height: 42px;
+            margin-top: 26px;
         }
+    }
+    .divider {
+        margin: 15px auto 0 auto;
+   
     }
     .about {
         &__wrapper {
@@ -78,13 +106,25 @@
             column-gap: 20px;
         }
     }
-    .skills {
-        &__ratings {
-            grid-template: repeat(3,minmax(60px,100%))/repeat(2,350px);
-            column-gap: 20px;
+    .price {
+        &__wrapper {
+            grid-template-columns: repeat(auto-fit, 350px);
+            padding: 0;
+            justify-content: space-between;
         }
     }
-
+    .contacts {
+        &__wrapper {
+            grid-template-columns: 300px 400px;
+        }
+        &__form {
+            grid-template: 45px 190px 45px / repeat(2, 195px);
+        }
+        &__btn {
+            padding: 8px 25px;
+            line-height: 16px;
+        }
+    } 
 }
 
 @media (max-width: 768px) {
@@ -145,10 +185,36 @@
         }
         &__wrapper-tech {
             margin-top: 15px;
+            justify-content: center;
         }
-        &__ratings {
-            grid-template: repeat(6,minmax(60px,100%))/repeat(1,350px);
-            column-gap: 20px;
+    }
+    .portfolio {
+        padding-top: 40px;
+        &__subtitle {
+            margin-top: 26px;
+            line-height: 26px;
+        }
+        &__wrapper {
+            margin-top: 55px;
+        }
+    }
+    .price {
+        padding-top: 40px;
+        &__wrapper {
+            margin-top: 20px;
+            justify-content: center;
+        }
+    }
+    .contacts {
+        padding-top: 40px;
+        &__photo {
+            display: none;
+        }
+        &__wrapper {
+            grid-template-columns: 1fr;
+        }
+        &__form {
+            grid-template: 45px 190px 45px / repeat(2, 250px);
         }
     }
 }
@@ -202,9 +268,8 @@
             grid-gap: 20px;
         }
         &__ratings {
-            grid-template: repeat(6,minmax(60px,100%))/repeat(1, 300px);
             &-line {
-                width: 300px;
+                width: 100%;
             }
             &-item {
                 display: grid;
@@ -214,5 +279,36 @@
                 justify-self: end;
             }
         }
-    }
+    } 
+    .price {
+        &__wrapper {
+            grid-template-columns: repeat(auto-fit, 295px);
+        }
+    }  
+    .contacts {
+        padding-bottom: 50px;
+        &__form {
+            grid-template: 45px 45px 190px minmax(45px, auto) / 1fr;
+        }
+        &__texarea {
+            grid-column: unset;
+            width: 100%;
+        }
+        &__triggers {
+            grid-column: unset;
+            grid-template-columns: 1fr;
+            column-gap: unset;
+            row-gap: 20px;
+        }
+        &__btn {
+            order: 2;
+            max-width: 220px;
+        }
+        &__policy {
+            width: 180px;
+            margin: 0 auto;
+            line-height: 18px;
+        }
+    } 
 }
+
